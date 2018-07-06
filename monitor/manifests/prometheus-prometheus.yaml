@@ -15,6 +15,7 @@ spec:
   nodeSelector:
     beta.kubernetes.io/os: linux
   replicas: 2
+  retention: "8h"
   resources:
     requests:
       memory: 400Mi
