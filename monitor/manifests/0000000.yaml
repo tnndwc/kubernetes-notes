@@ -12,5 +12,5 @@ spec:
   accessModes:
   - ReadWriteOnce
   nfs:
-    server: server ip
+    server: server
     path: "/data"
