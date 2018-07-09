@@ -6,6 +6,15 @@ metadata:
   name: k8s
   namespace: monitoring
 spec:
+  storage:
+    volumeClaimTemplate:
+      spec:
+        selector:
+          matchLabels:
+            app: my-prometheus
+        resources:
+          requests:
+            storage: 30Gi
   alerting:
     alertmanagers:
     - name: alertmanager-main
@@ -14,8 +23,8 @@ spec:
   baseImage: quay.io/prometheus/prometheus
   nodeSelector:
     beta.kubernetes.io/os: linux
-  replicas: 2
-  retention: "8h"
+  replicas: 1
+  retention: 8h
   resources:
     requests:
       memory: 400Mi

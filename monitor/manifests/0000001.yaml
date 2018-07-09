@@ -1,0 +1,15 @@
+# Grafana Storage
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: my-pv2
+  labels:
+    app: my-grafana
+spec:
+  capacity:
+    storage: 30Gi
+  accessModes:
+  - ReadWriteOnce
+  nfs:
+    server: server ip
+    path: "/data2"
