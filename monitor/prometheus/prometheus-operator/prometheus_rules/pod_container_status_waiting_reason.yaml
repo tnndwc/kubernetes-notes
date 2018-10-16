@@ -1,0 +1,5 @@
+alert: PodContainerStatusWaitingReason
+    annotations:
+      message: 'reason: {{ `{{$labels.reason}}` }}: (namespace : {{ `{{$labels.namespace}}` }} instance: {{ `{{$labels.instance}}` }} pod: {{ `{{$labels.pod}}` }} container : {{ `{{$labels.container}}` }} )'
+    expr: sum by (namespace, instance, pod, container, reason) (rate(kube_pod_container_status_waiting_reason{}[5m])) > 0
+    for: 10m
