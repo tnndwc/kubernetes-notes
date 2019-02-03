@@ -18,3 +18,7 @@ Docker 本质是运行在 Linux 上的一个进程。
   + 通过 localhost 或 socket 文件本地通信
   + 需要共享某些资源
 + 通过 Pod 模拟 Linux 进程组的概念。Pod 内的容器相互协作，共同组合成为一个 Linux 下的`进程组`
+
+### 其它
+
++ [Custom Metrics](custom_metrics.md)
